@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -27,17 +28,27 @@
     height: 120px;
     display: flex;
     justify-content: space-between;
-    color:white">
+    color:white;
+    align-items: flex-end">
       <span 
       style="display: flex;
       flex-direction: column;
       font-family: bungee;
-      padding-left: 1.5em">tweeter</span>
-      <div style="padding-right: 1.5em;">Write a new tweet
-        <i class="fas fa-angle-double-down"></i>
+      padding-left: 1.5em;
+      ">tweeter</span>
+      <div style="display: flex; padding-right: 1.5em; flex-direction: column; align-items: center; font-size: 16px"><b style="">Write</b> a new tweet
+        <i style="color: red" class="fas fa-angle-double-down"></i>
       </div>
     </nav>
-
+    <header>
+      <div>
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div>
+          <h2>Scream Queen</h2>
+      </div>
+    </header>
     <!-- Page-specific (main) content here -->
     <main class="container"></main>
   </body>
