@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -67,26 +68,40 @@
           </div>
         </form>
       </section>
+      <!-- container for the tweets to be put into upon creation-->
       <section class="tweet-container">
         <article class="tweet">
-          <header class="user">
-            name is a relative
+          <!-- header contains username and userid on opposited sides-->
+          <header class="user-info">
+            <div class="user">
+              <img>
+              <output>name</output>
+            </div>
+            <section class="user-id">
+              @name
+            </section>
           </header>
           <body class="tweet-post">
             thoughts are irrelevant
           </body>
-          <footer class="interactives">
-            interactivity is overrated
+          <footer class="informants">
+            <section class="date">
+              date
+            </section>
+            <div>
+              <div class="interactives">flag
+
+              </div>
+              <div class="interactives">retweet
+
+              </div>
+              <div class="interactives">like
+
+              </div>
+            </div>
           </footer>
         </article>
       </section>
-      <!-- just a bunch of writing to help determine if somethin is breaking the page layout-->
-      Boys will be BOYS
-      <h3>these are the times of which we find ourselves trying harder to get to an uncertain future because our entire race will lose everything just because capitalists has overtaken too much of our people</h3>
-      <h2>the beauty of the natural world is slowly fading away but not if we keep personal gardens, right?
-      </h2>
-      <h2>Where are a ll the good men? The ones the stories tell us of, that we should not need to fight this awar alone and held captive by our own hopes and dreams</h2>
-      <p>we are the people, but we are not in the correct frame of mind to want to help each other</p>
     </main>
   </body>
   <script src="/scripts/client.js"></script>
