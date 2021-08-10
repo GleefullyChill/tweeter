@@ -1,11 +1,13 @@
+/* this plays with the container for the entire new tweet box */
 .new-tweet {
   align-self: stretch;
 }
+/* display and flex-direction keep layout in order */
 form {
   display: flex;
   flex-direction: column;
-  transition: all .3s; 
  }
+ /* assigns an initial position and a transformed position, transition is for the return to it's "origin" */
  #tweet-label {
    font-size: 1em;
    opacity: 1;
@@ -13,6 +15,7 @@ form {
    transform-origin: 0 0;
    transition: all .3s;
  }
+ /* specifies some layout to the field to accomodate the label transition, transition is for the border color change*/
  #tweet-text {
    display: flex;
    height: 1.5em;
@@ -22,25 +25,35 @@ form {
    box-shadow: none;
    border-style: none none solid none;
    transition:all .5s;
+   background-color: transparent;
  }
+ /* placeholder is invisible */
  #tweet-text::placeholder {
    color: transparent;
  }
+ /* on focus of textarea changes border color */
  #tweet-text:focus {
    box-shadow: none;
    outline: none;
    border-color: blue;
  }
+ /* on focus of the text area or when the placeholder is not in place, ie text in field, moves the label out of the text field */
  #tweet-text:focus + #tweet-label,
   #tweet-text:not(:placeholder-shown) + #tweet-label {
    transform: translateY(-2.5em) scale(.8);
  }
+ /* turn a negative count red */
+ .negNum {
+   color: red;
+ }
+ /* style the form to allow the button and count to be on the bottom and spread to the opposite sides with bungee font */
  form > div{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-family: 'bungee';
  }
+ /* change colour of the tweet button */
  .new-tweet button {
    color: white;
    background-color: blue;

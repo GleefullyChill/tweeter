@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
 }
+/* force the profile picture into the top center of the screen, should overlap, but working on it */
 header {
   display: flex;
   position: absolute center;
