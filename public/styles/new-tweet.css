@@ -1,10 +1,17 @@
 .new-tweet {
   align-self: stretch;
 }
- form {
-   display: flex;
-   flex-direction: column;
-
+form {
+  display: flex;
+  flex-direction: column;
+  transition: all .3s; 
+ }
+ #tweet-label {
+   font-size: 1em;
+   opacity: 1;
+   transform: translateY(-1.4em);
+   transform-origin: 0 0;
+   transition: all .3s;
  }
  #tweet-text {
    display: flex;
@@ -12,6 +19,21 @@
    overflow: none;
    border-bottom-width: 5px;
    border-bottom-color: black;
+   box-shadow: none;
+   border-style: none none solid none;
+   transition:all .5s;
+ }
+ #tweet-text::placeholder {
+   color: transparent;
+ }
+ #tweet-text:focus {
+   box-shadow: none;
+   outline: none;
+   border-color: blue;
+ }
+ #tweet-text:focus + #tweet-label,
+  #tweet-text:not(:placeholder-shown) + #tweet-label {
+   transform: translateY(-2.5em) scale(.8);
  }
  form > div{
   display: flex;

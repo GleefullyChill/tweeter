@@ -37,7 +37,7 @@
       font-family: bungee;
       padding-left: 1.5em;
       ">tweeter</span>
-      <div style="display: flex; padding-right: 1.5em; flex-direction: column; align-items: center; font-size: 16px"><b style="">Write</b> a new tweet
+      <div style="display: flex; padding-right: 1.5em; flex-direction: column; align-items: center; font-size: 16px"><b>Write</b> a new tweet
         <i style="color: red" class="fas fa-angle-double-down"></i>
       </div>
     </nav>
@@ -55,8 +55,8 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea  name="text" id="tweet-text"></textarea>
+          <textarea placeholder="Not visible" name="text" id="tweet-text"></textarea>
+          <label id="tweet-label" for="tweet-text">What are you humming about?</label>
           <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
