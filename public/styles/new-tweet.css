@@ -1,0 +1,25 @@
+.new-tweet {
+  align-self: stretch;
+}
+ form {
+   display: flex;
+   flex-direction: column;
+
+ }
+ #tweet-text {
+   display: flex;
+   height: 1.5em;
+   overflow: none;
+   border-bottom-width: 5px;
+   border-bottom-color: black;
+ }
+ form > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'bungee';
+ }
+ .new-tweet button {
+   color: white;
+   background-color: blue;
+ }
