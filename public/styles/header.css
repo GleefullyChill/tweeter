@@ -1,0 +1,12 @@
+html {
+  box-sizing: border-box;
+}
+header {
+  display: flex;
+  position: absolute center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  
+
+}
