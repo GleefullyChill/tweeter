@@ -32,5 +32,11 @@ body {
   justify-content: center;
   flex-direction: column;
  }
- .container {
+ form {
+   
+ }
+ form > div{
+   display: flex;
+   flex-direction: row;
+  justify-content: space-between;
  }
