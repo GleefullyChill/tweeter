@@ -1,11 +1,14 @@
 /* this plays with the container for the entire new tweet box */
 .new-tweet {
   align-self: stretch;
+  padding: 2em
 }
-/* display and flex-direction keep layout in order */
+/* display and flex-direction keep layout of text field in order */
 form {
   display: flex;
   flex-direction: column;
+  padding-left: 1em;
+  padding-right: 1em;
  }
  /* assigns an initial position and a transformed position, transition is for the return to it's "origin" */
  #tweet-label {
@@ -22,7 +25,6 @@ form {
    overflow: none;
    border-bottom-width: 5px;
    border-bottom-color: black;
-   box-shadow: none;
    border-style: none none solid none;
    transition:all .5s;
    background-color: transparent;
@@ -33,7 +35,6 @@ form {
  }
  /* on focus of textarea changes border color */
  #tweet-text:focus {
-   box-shadow: none;
    outline: none;
    border-color: blue;
  }

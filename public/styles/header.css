@@ -1,14 +1,16 @@
 html {
   box-sizing: border-box;
 }
+nav {
+  position: fixed;
+  top: 0%;
+  width: 100%
+}
 /* force the profile picture into the top center of the screen, should overlap, but working on it */
 header {
+  margin-top: 120px;
   display: flex;
   position: absolute center;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
-  z-index: 20px
-
-
 }

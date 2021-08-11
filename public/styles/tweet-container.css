@@ -1,0 +1,56 @@
+/*  */
+.tweet-container {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-self: stretch;
+  padding: 2em;
+}
+/*  */
+.tweet {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid black;
+  transition: .4s;
+
+}
+/*  */
+article header {
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/*  */
+.tweet-post {
+  display: flex;
+  height: 130px;
+  padding: 1em;
+  border-bottom: 5px solid black;
+  border-radius: 5%;
+
+}
+/*  */
+article footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/*  */
+article footer > div {
+  display: flex;
+  flex-direction: row;
+}
+/* article article:focus {
+  border-color: blue;
+} */
+.tweet:hover {
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
+.interactives:hover {
+  color: rgb(43, 40, 218);
+}
+.checked {
+  color: rgb(43, 40, 218);
+}

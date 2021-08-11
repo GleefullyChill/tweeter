@@ -16,5 +16,14 @@ $(document).ready(function() {
       $counter.removeClass('negNum')
     }
   });
-
+  $('.interactives').on('click', function() {
+    console.log($(this).hasClass('checked'))
+    switch($(this).hasClass('checked')) {
+      case true:
+        $(this).removeClass('checked');
+        break;
+      case false:
+        $(this).addClass('checked') ;
+    }
+  })
 })
