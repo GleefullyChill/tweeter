@@ -17,8 +17,8 @@ $(() => {
   const loadTweets = function() {
     $.get("/tweets", (response) => {
       renderTweets(response);
-    })
-  }
+    });
+  };
   loadTweets();
    
   //create the elements with the tweet and then append them to the tweet-container
@@ -36,7 +36,7 @@ $(() => {
     const $heart = $('<div class="interactive"><i class="fas fa-heart"></div>');
 
     //format the date
-    $date['0'].innerHTML = timeago.format($date['0'].innerHTML)
+    $date['0'].innerHTML = timeago.format($date['0'].innerHTML);
     
     //create the headers two elements, then the header element
     const $leftHead = $('<div>');
@@ -46,9 +46,9 @@ $(() => {
 
     //create the footers two elements, then the footer element
     const $interactives = $('<div class="interactives">');
-    $interactives.append($flag, $retweet, $heart)
+    $interactives.append($flag, $retweet, $heart);
     const $footer = $('<footer class="tweet-footer">');
-    $footer.append($date, $interactives)
+    $footer.append($date, $interactives);
 
     //declare the container for the elements defined above to be appended to
     const $tweet = $('<article class="tweet">').addClass('tweet');
@@ -56,7 +56,7 @@ $(() => {
     //append all the items into the tweet
     $tweet.append($header, $tweetPost, $footer);
     return $tweet;
-  }
+  };
   const renderTweets = function(tweets) {
     const $tweetContainer = $('.tweet-container');
     $tweetContainer.empty();
@@ -64,41 +64,44 @@ $(() => {
       const $tweet = createTweetElement(tweet);
       $tweetContainer.prepend($tweet);
     }
-  }
+  };
 
   //create new tweets with a azax request
   const $newTweet = $('form');
   $newTweet.submit(function(event) {
     event.preventDefault();
-    let $counter = $(this).find('.counter')
+    let $counter = $(this).find('.counter');
     $counter = $counter.val();
     //attempt to put .error-container into an errorEvent
     
     const errorEvent = function($errorMessage) {
-      const $errorText = $('<h2>Error! </h2>')
+      const $errorText = $('<h2>Error! </h2>');
       const $errorBox = $('<header>').addClass("error");
       const $errorContainer = $('.error-container');
-      $errorBox.append($errorText, $errorMessage)
-      $errorBox.appendTo($errorContainer).hide().slideDown()
-      $errorContainer.addClass("errorNow")
-    }
+      $errorBox.append($errorText, $errorMessage);
+      $errorBox.appendTo($errorContainer).hide().slideDown();
+      $errorContainer.addClass("errorNow");
+    };
     //put these into a callback function with the message as a parameter
     if ($counter >= 140) {
-      const $errorMessage = $('<h5>Please write something before you press submit!</5>')
+      const $errorMessage = $('<h5>Please write something before you press submit!</5>');
       //call the error function
-      errorEvent($errorMessage)
+      errorEvent($errorMessage);
       return;
     }
     if ($counter < 0) {
-      const $errorMessage = $('<h5>Please use fewer characters win your tweet!</h2>')
-      errorEvent($errorMessage)
+      const $errorMessage = $('<h5>Please use fewer characters win your tweet!</h2>');
+      errorEvent($errorMessage);
       return;
     }
 
     const serializedData = $(this).serialize();
     $.post('/tweets', serializedData).then(loadTweets);
 
-  })
+    //empty the text area
+    const $textArea = $(this).find('textarea')
+    $textArea.val('');
+  });
  
   //Remove error message if error no longer applies
   $('textarea').on('input', function() {
@@ -113,12 +116,12 @@ $(() => {
         //slideUp occurs and errorNow class is removed
         $error.slideUp("normal", function() {
           $(this).remove();
-          $errorContainer.removeClass("errorNow")
-        })
+          $errorContainer.removeClass("errorNow");
+        });
       }
     }
-  })
-})
+  });
+});
 
 // Test / driver code (temporary). Eventually will get this from the server.
 // const tweetData = {
@@ -136,5 +139,5 @@ $(() => {
 
 
 // Test / driver code (temporary)
- // to see what it looks like
+// to see what it looks like
 // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
