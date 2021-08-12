@@ -68,10 +68,17 @@ $(() => {
   const $newTweet = $('form');
   $newTweet.submit(function(event) {
     event.preventDefault();
-    console.log($(this))
+    let $counter = $(this).find('.counter')
+    $counter = $counter.val();
+    console.log($counter)
+    if ($counter >= 140) {
+      return window.alert("Please write before you submit")
+    }
+    if ($counter < 0) {
+      return window.alert("Too many charaters!!")
+    }
     const serializedData = $(this).serialize();
-    console.log(serializedData)
-    $.post('/tweets', serializedData).then(renderTweets);
+    //$.post('/tweets', serializedData).then(renderTweets);
 
   })
 })
