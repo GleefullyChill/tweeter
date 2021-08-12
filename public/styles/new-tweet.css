@@ -1,7 +1,5 @@
 /* container will only be hidden unless called for by the toggle */
-/* .hidden {
-  display: none;
-} */
+
 /* this plays with the container for the entire new tweet box */
 .new-tweet {
   align-self: stretch;
@@ -64,12 +62,13 @@ form > div{
     color: white;
     background-color: blue;
 }
+/* general placement of the error-container */
 .error-container {
   width: 100%;
   display: flex;
   z-index: 50;
 }
-
+/* the visible shape and color of the error */
 .error {
   border: 5px solid #c9432c;
   color: #c9432c;
@@ -80,6 +79,8 @@ form > div{
   justify-content: center;
   z-index: 50;
 }
+/* placement of the error message
+margin reduced for better form */
 .error > h2 {
   display: flex;
   margin: 0;

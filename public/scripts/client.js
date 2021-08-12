@@ -66,23 +66,26 @@ $(() => {
     }
   };
 
-  //create new tweets with a azax request
+  //create new tweets with a ajax request
   const $newTweet = $('form');
   $newTweet.submit(function(event) {
     event.preventDefault();
     let $counter = $(this).find('.counter');
     $counter = $counter.val();
-    //attempt to put .error-container into an errorEvent
     
+    //an error calling funtion
     const errorEvent = function($errorMessage) {
+      //build the error HTML
       const $errorText = $('<h2>Error! </h2>');
       const $errorBox = $('<header>').addClass("error");
       const $errorContainer = $('.error-container');
       $errorBox.append($errorText, $errorMessage);
+      //attach the error box and slide it into view
       $errorBox.appendTo($errorContainer).hide().slideDown();
+      //add a handle to use when removing the message
       $errorContainer.addClass("errorNow");
     };
-    //put these into a callback function with the message as a parameter
+    //determines if an errormessage should be shown and what it should say
     if ($counter >= 140) {
       const $errorMessage = $('<h5>Please write something before you press submit!</5>');
       //call the error function
@@ -94,7 +97,7 @@ $(() => {
       errorEvent($errorMessage);
       return;
     }
-
+    //serailize the data and send it to /tweets to become a tweet
     const serializedData = $(this).serialize();
     $.post('/tweets', serializedData).then(loadTweets);
 

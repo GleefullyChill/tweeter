@@ -68,7 +68,6 @@ $(() => {
     }
     //remove button and class if you return to the top by scrolling
     if($body.hasClass('scroll-return-button') && window.scrollY <= 160) {
-       console.log(true)
       $('.fa-circle').remove();
       $body.removeClass('scroll-return-button');
     }

@@ -1,4 +1,4 @@
-/*  */
+/* the space where the tweets are all held */
 .tweet-container {
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   padding: 2em;
   height: 360px;
 }
-/*  */
+/* the visible shape of the tweet */
 .tweet {
   display: flex;
   flex-direction: column;
@@ -18,14 +18,14 @@
   margin-top: 2em;
 
 }
-/*  */
+/* the container of the avatar, username and handle */
 .user-info {
   margin-top: 20px;
   flex-direction: row;
   justify-content: space-between;
   padding: .5em
 }
-/*  */
+/* the content of the message posted */
 .tweet-post {
   display: flex;
   height: 130px;
@@ -42,7 +42,7 @@ article footer {
   height: 50px;
   padding: .5em
 }
-/*  */
+/* the container of the flag, retweet, and heart */
 .interactives {
   display: flex;
   flex-direction: row;

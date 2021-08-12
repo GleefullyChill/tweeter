@@ -16,7 +16,4 @@ $(document).ready(function() {
       $counter.removeClass('negNum');
     }
   });
-  
-  
-  
 });
