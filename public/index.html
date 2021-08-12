@@ -24,28 +24,16 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) 
-    styled inline while learning flex, will move into another appropriate .css if time allows -->
-    <nav
-    style="background-color: blue;
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    color:white;
-    align-items: flex-end">
-    <!-- needs to be moved up a bit, possibly by adjusting header-->
-      <span 
-      style="display: flex;
-      flex-direction: column;
-      font-family: bungee;
-      padding-left: 1.5em;
-      ">tweeter</span>
-      <!-- working to get the Write bolded -->
-      <div style="display: flex; padding-right: 1.5em; flex-direction: column; align-items: center; font-size: 16px"><b>Write</b> a new tweet
-        <i style="color: red" class="fas fa-angle-double-down"></i>
+    <!-- Top nav bar (fixed) -->
+    <nav>
+    <!-- The page declaration -->
+      <span>tweeter</span>
+      <!-- button for add/removing compose-tweet form -->
+      <div>Write a new tweet
+        <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
-    <div class="error-container"></div>
+    
     <header>
       <div>
           <img src="/images/profile-hex.png"> 
@@ -55,6 +43,7 @@
           <h2>Scream Queen</h2>
       </div>
     </header>
+    <div class="error-container"></div>
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">

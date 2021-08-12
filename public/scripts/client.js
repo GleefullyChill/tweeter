@@ -94,18 +94,20 @@ $(() => {
     }
 
     const serializedData = $(this).serialize();
+    console.log(serializedData)
     //$.post('/tweets', serializedData).then(renderTweets);
 
   })
   //Remove error message if error no longer applies
   $('textarea').on('input', function() {
     const $errorContainer = $('.error-container');
+    let textLength = $(this).val().length;
     //added errorNow class to error-container after error slideDown occurred
     if ($errorContainer.hasClass("errorNow")) {
       const $counter = $(this).parent().find('.counter');
       const $error = $('.error');
       //check if error still applies
-      if ($counter.val() >= 0 && $counter.val() < 140) {
+      if ($counter.val() >= 0 && textLength > 0) {
         //slideUp occurs and errorNow class is removed
         $error.slideUp("normal", function() {
           $(this).remove();

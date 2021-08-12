@@ -63,6 +63,7 @@ form > div{
   width: 100%;
   display: flex;
 }
+
 .error {
   border: 5px solid #c9432c;
   color: #c9432c;

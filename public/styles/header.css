@@ -6,6 +6,29 @@ nav {
   top: 0%;
   width: 100%;
   z-index: 999;
+  background-color: blue;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  color:white;
+  align-items: flex-end"
+}
+nav > span {
+  display: flex;
+  flex-direction: column;
+  font-family: 'bungee';
+  padding: 1.5em;
+
+}
+nav > div {
+  display: flex;
+  padding-right: 1.5em;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px
+}
+.fa-angle-double-down {
+  color: red
 }
 /* force the profile picture into the top center of the screen, should overlap, but working on it */
 header {
