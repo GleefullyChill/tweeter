@@ -29,9 +29,9 @@ $(() => {
     const $tweetPost = $('<article class="tweet-post">').text(tweet.content.text);
     const $date = $('<section class="date">').text(tweet.created_at);
     //declare the interacitves attached to elements with interactives class
-    const $flag = $('<div class="interactive"><i class="fas fa-flag">');
-    const $retweet = $('<div class="interactive"><i class="fas fa-retweet">');
-    const $heart = $('<div class="interactive"><i class="fas fa-heart">');
+    const $flag = $('<div class="interactive"><i class="fas fa-flag"></div>');
+    const $retweet = $('<div class="interactive"><i class="fas fa-retweet"></div>');
+    const $heart = $('<div class="interactive"><i class="fas fa-heart"></div>');
 
     //format the date
     $date['0'].innerHTML = timeago.format($date['0'].innerHTML)
@@ -70,17 +70,24 @@ $(() => {
     event.preventDefault();
     let $counter = $(this).find('.counter')
     $counter = $counter.val();
-    
+    //put these into a callback function with the message as a parameter
     if ($counter >= 140) {
-      const $error = $('<header class="error"><i><h2><span>').attr('span', 'Error!').attr('h2', 'Please write something before you press submit!');
-      const $errorLocation = $('.error');
-      $errorLocation.append($error);
+      const $errorText = $('<h2>Error! </h2>')
+      const $errorMessage = $('<h5>Please write something before you press submit!</h2>')
+      const $errorBox = $('<header>').addClass("error");
+      const $error = $('.error-container')
+      $errorBox.append($errorText, $errorMessage)
+      $error.append($errorBox)
+      $error.slideDown()
       return;
     }
     if ($counter < 0) {
-      const $error = ('<header class="error"><i><h2><span>').attr('span', 'Error!').attr('h2', 'Please use no more than 140 chracters!');
-      const $errorLocation = $('.error');
-      $errorLocation.append($error);
+      const $errorText = $('<h2>Error! </h2>')
+      const $errorMessage = $('<h5>Please use fewer characters win your tweet!</h2>')
+      const $errorBox = $('<header>').addClass("error");
+      const $error = $('.error-container')
+      $errorBox.append($errorText, $errorMessage)
+      $error.append($errorBox).slideDown()
       return;
     }
 
