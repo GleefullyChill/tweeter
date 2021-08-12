@@ -70,30 +70,49 @@ $(() => {
     event.preventDefault();
     let $counter = $(this).find('.counter')
     $counter = $counter.val();
+    //attempt to put .error-container into an errorEvent
+    
+    const errorEvent = function($errorMessage) {
+      const $errorText = $('<h2>Error! </h2>')
+      const $errorBox = $('<header>').addClass("error");
+      const $errorContainer = $('.error-container');
+      $errorBox.append($errorText, $errorMessage)
+      $errorBox.appendTo($errorContainer).hide().slideDown()
+      $errorContainer.addClass("errorNow")
+    }
     //put these into a callback function with the message as a parameter
     if ($counter >= 140) {
-      const $errorText = $('<h2>Error! </h2>')
-      const $errorMessage = $('<h5>Please write something before you press submit!</h2>')
-      const $errorBox = $('<header>').addClass("error");
-      const $error = $('.error-container')
-      $errorBox.append($errorText, $errorMessage)
-      $error.append($errorBox)
-      $error.slideDown()
+      const $errorMessage = $('<h5>Please write something before you press submit!</5>')
+      //call the error function
+      errorEvent($errorMessage)
       return;
     }
     if ($counter < 0) {
-      const $errorText = $('<h2>Error! </h2>')
       const $errorMessage = $('<h5>Please use fewer characters win your tweet!</h2>')
-      const $errorBox = $('<header>').addClass("error");
-      const $error = $('.error-container')
-      $errorBox.append($errorText, $errorMessage)
-      $error.append($errorBox).slideDown()
+      errorEvent($errorMessage)
       return;
     }
 
     const serializedData = $(this).serialize();
     //$.post('/tweets', serializedData).then(renderTweets);
 
+  })
+  //Remove error message if error no longer applies
+  $('textarea').on('input', function() {
+    const $errorContainer = $('.error-container');
+    //added errorNow class to error-container after error slideDown occurred
+    if ($errorContainer.hasClass("errorNow")) {
+      const $counter = $(this).parent().find('.counter');
+      const $error = $('.error');
+      //check if error still applies
+      if ($counter.val() >= 0 && $counter.val() < 140) {
+        //slideUp occurs and errorNow class is removed
+        $error.slideUp("normal", function() {
+          $(this).remove();
+          $errorContainer.removeClass("errorNow")
+        })
+      }
+    }
   })
 })
 
