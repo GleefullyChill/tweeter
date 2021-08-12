@@ -31,7 +31,7 @@
     <!-- The page declaration -->
       <span>tweeter</span>
       <!-- button for add/removing compose-tweet form -->
-      <div>Write a new tweet
+      <div class="toggle-switch">Write a new tweet
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
@@ -48,8 +48,8 @@
     <div class="error-container"></div>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+      <section class="new-tweet hidden">
+        
         <form method="POST" action="/tweets">
           <!-- placeholder is necessary to make the label to stay out of the field if there is text -->
           <textarea placeholder="Not visible" name="text" id="tweet-text"></textarea>

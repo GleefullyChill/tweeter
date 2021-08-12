@@ -1,3 +1,7 @@
+/* container will only be hidden unless called for by the toggle */
+/* .hidden {
+  display: none;
+} */
 /* this plays with the container for the entire new tweet box */
 .new-tweet {
   align-self: stretch;

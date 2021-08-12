@@ -121,6 +121,21 @@ $(() => {
       }
     }
   });
+  //New tweet form starts toggled
+  $('.new-tweet').hide()
+  //Write a New Tweet toggles the hidden form for a new tweet
+  $('.toggle-switch').on('click', function() {
+
+    $('.new-tweet').slideToggle()
+    //be sure you clear the textarea when toggling, so it's always "new"
+    $textArea.val('')
+    //get rid of any error messages when the form it's attached to disappears
+    $error.slideUp("normal", function() {
+      $(this).remove();
+      $errorContainer.removeClass("errorNow");
+      
+    });
+  })
 });
 
 // Test / driver code (temporary). Eventually will get this from the server.
