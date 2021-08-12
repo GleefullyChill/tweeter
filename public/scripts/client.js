@@ -11,16 +11,16 @@
 //and put the date into "date"
 //need to add the interactives, separately
 $(() => {
-  //get the the posts
-  // $.get('./data-files/initial-tweets.json', (response) => {
-  //   renderTweets();
-  //   console.log(response)
-  // })
+  //get the pre-made posts, as if others tweets are there to start you off
+  $.get("./lib/data-helpers.js", (response) => {
+    renderTweets();
+    console.log(response)
+   })
   //create the elements with the tweet and then append them to the tweet-container
   const createTweetElement = function(tweet) {
     //get the link within the avatars
     //const link = $('<a>').html(tweet.user.avatars)['0'].innerHTML;
-    const $avatar = $(`<img class="avatar" scr=>`).text(tweet.user.avatars);
+    const $avatar = $(`<img class="avatar">`).attr("src", tweet.user.avatars);
     const $username = $('<output class="username">').text(tweet.user.name);
     const $userid = $('<section class="user-id">').text(tweet.user.handle);
     const $tweetPost = $('<article class="tweet-post">').text(tweet.content.text);
@@ -61,11 +61,14 @@ $(() => {
     }
   }
   renderTweets(data)
-  const $newTweet = $('.new-tweet');
-  $newTweet.on('submit', function(event) {
+  const $newTweet = $('form');
+  $newTweet.submit(function(event) {
     event.preventDefault();
+    console.log($(this))
     const serializedData = $(this).serialize();
-    
+    console.log(serializedData)
+    $.post('/tweets', serializedData).then(renderTweets);
+
   })
 })
 const data = [
