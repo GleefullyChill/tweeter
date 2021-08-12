@@ -12,15 +12,37 @@
 //need to add the interactives, separately
 $(() => {
   const createTweetElement= function(tweet) {
-    const $avatar = $('<img class="avatar">').attr(tweet.user.avatars);
+    const link = $('<a>').html(tweet.user.avatars)['0'].innerHTML;
+    const $avatar = $(`<a class="avatar" href=${link}>`);
     const $username = $('<output class="username">').text(tweet.user.name);
     const $userid = $('<section class="user-id">').text(tweet.user.handle);
     const $tweetPost = $('<article class="tweet-post">').text(tweet.content.text);
     const $date = $('<section class="date">').text(tweet.created_at);
+    //declare the interacitves attached to elements with interactives class
+    const $flag = $('<div class="interactive"><i class="fas fa-flag">');
+    const $retweet = $('<div class="interactive"><i class="fas fa-retweet">');
+    const $heart = $('<div class="interactive"><i class="fas fa-heart">');
+
+    //format the date
+    $date['0'].innerHTML = timeago.format($date['0'].innerHTML)
+    
+    //create the headers two elements, then the header element
+    const $leftHead = $('<div>');
+    $leftHead.append($avatar, $username);
+    const $header = $('<header class="user-info">');
+    $header.append($leftHead, $userid);
+
+    //create the footers two elements, then the footer element
+    const $interactives = $('<div class="interactives">');
+    $interactives.append($flag, $retweet, $heart)
+    const $footer = $('<footer>');
+    $footer.append($date, $interactives)
+
+    //declare the container for the elements defined above to be appended to
     const $tweet = $('<article class="tweet">').addClass('tweet');
     
     //append all the items into the tweet
-    $tweet.append($avatar, $username, $userid, $tweetPost, $date);
+    $tweet.append($header, $tweetPost, $footer);
     return $tweet;
   }
   const $tweetContainer = $('.tweet-container')

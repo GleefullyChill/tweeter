@@ -4,7 +4,8 @@ html {
 nav {
   position: fixed;
   top: 0%;
-  width: 100%
+  width: 100%;
+  z-index: 999;
 }
 /* force the profile picture into the top center of the screen, should overlap, but working on it */
 header {

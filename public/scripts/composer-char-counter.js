@@ -16,7 +16,7 @@ $(document).ready(function() {
       $counter.removeClass('negNum')
     }
   });
-  $('.interactives').on('click', function() {
+  $('.interactive').on('click', function() {
     console.log($(this).hasClass('checked'))
     switch($(this).hasClass('checked')) {
       case true:
