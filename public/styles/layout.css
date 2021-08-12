@@ -33,6 +33,7 @@ body {
   justify-content: center;
   flex-direction: column;
  }
+ /* screen changes for different media */
  @media only screen and (min-width: 1024px) {
    body {
      display: flex;
@@ -54,4 +55,17 @@ body {
      display: flex;
      transform: translateX(10vw) translateY(10vh)
    }
+ }
+ /* scroll button styling */
+ .fa-circle {
+  display: flex;
+  position: fixed;
+  bottom: 10vh;
+  right: 2vw;
+  font-size: 3em;
+  color: red;
+ }
+ .fa-angle-double-up {
+  transform: translateX(-.81em);
+  color: #f4f1ec;
  }

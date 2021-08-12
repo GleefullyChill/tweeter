@@ -143,16 +143,27 @@ $(() => {
   // will return you to the top
   $(window).scroll(function() {
     const $body = $('body');
-    if (!$body.hasClass('scroll-return-button')) {
+    if (!$body.hasClass('scroll-return-button') && window.scrollY > 170) {
+
+      //make the button
       const $scroll = $('<i class="fas fa-angle-double-up"></i>');
       const $platform = $('<i class="fas fa-circle"></i>');
+      //append to make the styling easier
       $platform.append($scroll);
+      //add to index.html via the body
       $body.append($platform).addClass('scroll-return-button');
-      $('.fa-circle').click(function() {
+      //add the click function
+      $($platform).click(function() {
         $(window).scrollTop(0);
         $(this).remove();
         $body.removeClass('scroll-return-button');
       })
+    }
+    //remove button and class if you return to the top by scrolling
+    if($body.hasClass('scroll-return-button') && window.scrollY <= 160) {
+       console.log(true)
+      $('.fa-circle').remove();
+      $body.removeClass('scroll-return-button');
     }
   })
   
