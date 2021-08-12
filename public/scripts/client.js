@@ -4,6 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+
 //const $tweet = $(`<article class="tweet">Hello world</article>`);
 //forcing stuff into the tweet container
 //need a photo, username, userid in the header
@@ -95,9 +97,12 @@ $(() => {
 
     const serializedData = $(this).serialize();
     console.log(serializedData)
+    const user = generateRandomUser()
+    console.log(user)
     //$.post('/tweets', serializedData).then(renderTweets);
 
   })
+ 
   //Remove error message if error no longer applies
   $('textarea').on('input', function() {
     const $errorContainer = $('.error-container');

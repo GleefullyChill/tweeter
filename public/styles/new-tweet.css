@@ -43,7 +43,7 @@ form {
   #tweet-text:not(:placeholder-shown) + #tweet-label {
    transform: translateY(-2.5em) scale(.8);
 }
- /* turn a negative count red */
+ /* turn a negative count red, used in composer-char-counter.js */
  .negNum {
    color: red;
 }

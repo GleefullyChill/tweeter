@@ -18,13 +18,5 @@ $(document).ready(function() {
   });
   
   
-  $('.interactive').on('click', function() {
-    switch($(this).hasClass('checked')) {
-      case true:
-        $(this).removeClass('checked');
-        break;
-      case false:
-        $(this).addClass('checked') ;
-    }
-  })
+  
 })
