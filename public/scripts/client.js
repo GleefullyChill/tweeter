@@ -11,7 +11,7 @@
 //and put the date into "date"
 //need to add the interactives, separately
 $(() => {
-  const createTweetElement= function(tweet) {
+  const createTweetElement = function(tweet) {
     const link = $('<a>').html(tweet.user.avatars)['0'].innerHTML;
     const $avatar = $(`<a class="avatar" href=${link}>`);
     const $username = $('<output class="username">').text(tweet.user.name);
@@ -35,7 +35,7 @@ $(() => {
     //create the footers two elements, then the footer element
     const $interactives = $('<div class="interactives">');
     $interactives.append($flag, $retweet, $heart)
-    const $footer = $('<footer>');
+    const $footer = $('<footer class="tweet-footer">');
     $footer.append($date, $interactives)
 
     //declare the container for the elements defined above to be appended to
@@ -45,23 +45,29 @@ $(() => {
     $tweet.append($header, $tweetPost, $footer);
     return $tweet;
   }
-  const $tweetContainer = $('.tweet-container')
-  const $tweet = createTweetElement(tweetData);
-  $tweetContainer.append($tweet)
-  console.log($tweet);
+  const renderTweets = function(tweets) {
+    const $tweetContainer = $('.tweet-container');
+    $tweetContainer.empty();
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $tweetContainer.prepend($tweet);
+    }
+  }
+
+  
 })
 // Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
+// const tweetData = {
+//   "user": {
+//     "name": "Newton",
+//     "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//   "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//   "created_at": 1461116232227
+// }
 
 
 

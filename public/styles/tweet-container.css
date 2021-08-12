@@ -15,6 +15,7 @@
   border-radius: .5%;
   transition: .4s;
   border-spacing: 10px;
+  margin-top: 2em;
 
 }
 /*  */
@@ -33,7 +34,7 @@
   width: 95%;
   align-self: center;
 }
-/*  */
+/* also known as the tweet-footer, but using class name broke the interactives layout */
 article footer {
   display: flex;
   flex-direction: row;
@@ -46,13 +47,14 @@ article footer {
   display: flex;
   flex-direction: row;
 }
+/* gives space between the interactives*/
 .interactive {
   padding: .1em;
 }
-
+/*  */
 .tweet:hover {
-  -moz-box-shadow:    3px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  /* -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc; */
   box-shadow:         3px 3px 5px 6px #ccc;
   border-color: rgb(70, 33, 100)
 }
