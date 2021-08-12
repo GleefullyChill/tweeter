@@ -33,3 +33,25 @@ body {
   justify-content: center;
   flex-direction: column;
  }
+ @media only screen and (min-width: 1024px) {
+   body {
+     display: flex;
+     flex-direction: row;
+   }
+   body > header {
+     display: flex;
+     transform: translateX(8vw) translateY(15vh);
+   }
+   .error-container {
+     position: fixed;
+     transform: translateX(73vh) translateY(13vw);
+   }
+   .error {
+     display: flex;
+     max-width: 40%;
+   }
+   .container {
+     display: flex;
+     transform: translateX(10vw) translateY(10vh)
+   }
+ }

@@ -1,7 +1,8 @@
 /* this plays with the container for the entire new tweet box */
 .new-tweet {
   align-self: stretch;
-  padding: 2em
+  padding: 2em;
+  margin: 1em
 }
 /* display and flex-direction keep layout of text field in order */
 form {
@@ -62,6 +63,7 @@ form > div{
 .error-container {
   width: 100%;
   display: flex;
+  z-index: 50;
 }
 
 .error {
@@ -72,6 +74,7 @@ form > div{
   width: 100%;
   height: 5em;
   justify-content: center;
+  z-index: 50;
 }
 .error > h2 {
   display: flex;
