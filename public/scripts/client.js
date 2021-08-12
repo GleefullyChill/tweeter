@@ -96,10 +96,7 @@ $(() => {
     }
 
     const serializedData = $(this).serialize();
-    console.log(serializedData)
-    const user = generateRandomUser()
-    console.log(user)
-    //$.post('/tweets', serializedData).then(renderTweets);
+    $.post('/tweets', serializedData).then(loadTweets);
 
   })
  
