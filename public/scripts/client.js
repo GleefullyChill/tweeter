@@ -70,13 +70,20 @@ $(() => {
     event.preventDefault();
     let $counter = $(this).find('.counter')
     $counter = $counter.val();
-    console.log($counter)
+    
     if ($counter >= 140) {
-      return window.alert("Please write before you submit")
+      const $error = $('<header class="error"><i><h2><span>').attr('span', 'Error!').attr('h2', 'Please write something before you press submit!');
+      const $errorLocation = $('.error');
+      $errorLocation.append($error);
+      return;
     }
     if ($counter < 0) {
-      return window.alert("Too many charaters!!")
+      const $error = ('<header class="error"><i><h2><span>').attr('span', 'Error!').attr('h2', 'Please use no more than 140 chracters!');
+      const $errorLocation = $('.error');
+      $errorLocation.append($error);
+      return;
     }
+
     const serializedData = $(this).serialize();
     //$.post('/tweets', serializedData).then(renderTweets);
 
