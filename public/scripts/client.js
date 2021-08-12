@@ -11,9 +11,16 @@
 //and put the date into "date"
 //need to add the interactives, separately
 $(() => {
+  //get the the posts
+  // $.get('./data-files/initial-tweets.json', (response) => {
+  //   renderTweets();
+  //   console.log(response)
+  // })
+  //create the elements with the tweet and then append them to the tweet-container
   const createTweetElement = function(tweet) {
-    const link = $('<a>').html(tweet.user.avatars)['0'].innerHTML;
-    const $avatar = $(`<a class="avatar" href=${link}>`);
+    //get the link within the avatars
+    //const link = $('<a>').html(tweet.user.avatars)['0'].innerHTML;
+    const $avatar = $(`<img class="avatar" scr=>`).text(tweet.user.avatars);
     const $username = $('<output class="username">').text(tweet.user.name);
     const $userid = $('<section class="user-id">').text(tweet.user.handle);
     const $tweetPost = $('<article class="tweet-post">').text(tweet.content.text);
@@ -53,9 +60,39 @@ $(() => {
       $tweetContainer.prepend($tweet);
     }
   }
-
-  
+  renderTweets(data)
+  const $newTweet = $('.new-tweet');
+  $newTweet.on('submit', function(event) {
+    event.preventDefault();
+    const serializedData = $(this).serialize();
+    
+  })
 })
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+]
+
 // Test / driver code (temporary). Eventually will get this from the server.
 // const tweetData = {
 //   "user": {
