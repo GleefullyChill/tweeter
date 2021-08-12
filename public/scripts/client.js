@@ -125,17 +125,37 @@ $(() => {
   $('.new-tweet').hide()
   //Write a New Tweet toggles the hidden form for a new tweet
   $('.toggle-switch').on('click', function() {
-
-    $('.new-tweet').slideToggle()
+    const $newTweet = $('.new-tweet')
+    $newTweet.slideToggle()
     //be sure you clear the textarea when toggling, so it's always "new"
+    $textArea = $('textArea');
     $textArea.val('')
     //get rid of any error messages when the form it's attached to disappears
+    const $error = $('.error');
+    const $errorContainer = $('.error-container');
     $error.slideUp("normal", function() {
       $(this).remove();
       $errorContainer.removeClass("errorNow");
       
     });
   })
+  //scroll function
+  // will return you to the top
+  $(window).scroll(function() {
+    const $body = $('body');
+    if (!$body.hasClass('scroll-return-button')) {
+      const $scroll = $('<i class="fas fa-angle-double-up"></i>');
+      const $platform = $('<i class="fas fa-circle"></i>');
+      $platform.append($scroll);
+      $body.append($platform).addClass('scroll-return-button');
+      $('.fa-circle').click(function() {
+        $(window).scrollTop(0);
+        $(this).remove();
+        $body.removeClass('scroll-return-button');
+      })
+    }
+  })
+  
 });
 
 // Test / driver code (temporary). Eventually will get this from the server.

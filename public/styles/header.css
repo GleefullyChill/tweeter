@@ -29,7 +29,15 @@ nav > div {
 
 }
 .fa-angle-double-down {
-  color: red
+  color: red;
+  animation: bounce 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+@keyframes bounce{
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(.5em); }
+  100% { transform: translateY(0); }
 }
 /* force the profile picture into the top center of the screen, should overlap, but working on it */
 header {
