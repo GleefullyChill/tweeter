@@ -7,6 +7,7 @@ nav {
   top: 0%;
   width: 100%;
   z-index: 999;
+  background-image: url('/images/honey-im-subtle.png');
   background-color: blue;
   height: 120px;
   display: flex;
@@ -46,4 +47,5 @@ header {
   position: absolute center;
   align-items: center;
   flex-direction: column;
+  background-color: rgb(214, 235, 241);
 }

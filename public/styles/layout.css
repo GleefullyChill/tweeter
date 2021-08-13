@@ -17,7 +17,8 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-image: url('/images/honey-im-subtle.png');
+  background-color: #994f00;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }

@@ -102,7 +102,7 @@ $(() => {
     $.post('/tweets', serializedData).then(loadTweets);
 
     //empty the text area
-    const $textArea = $(this).find('textarea')
+    const $textArea = $(this).find('textarea');
     $textArea.val('');
   });
 });
