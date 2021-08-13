@@ -69,7 +69,8 @@ $(() => {
   const $newTweet = $('form');
   $newTweet.submit(function(event) {
     event.preventDefault();
-    let counter = $(this).find('.counter').val();
+    const $counter = $(this).find('.counter');
+    let counter = $counter.val();
 
     //an error calling funtion
     const errorEvent = function($errorMessage) {
@@ -99,8 +100,9 @@ $(() => {
     const serializedData = $(this).serialize();
     $.post('/tweets', serializedData).then(loadTweets);
 
-    //empty the text area
+    //empty the text area and rest the counter val
     const $textArea = $(this).find('textarea');
     $textArea.val('');
+    $counter.val(140)
   });
 });

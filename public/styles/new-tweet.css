@@ -74,7 +74,7 @@ form > div{
 /* the visible shape and color of the error */
 .error {
   border: 5px solid #c9432c;
-  color: #c9432c;
+  color: maroon;
   background: coral;
   position: fixed;
   width: 100%;
