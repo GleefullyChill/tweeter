@@ -6,10 +6,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
+!["An error!"](url)
 -
-
+!["Smaller Screen functionality, toggle hiding Compose Tweet form"](url)
 -
-
+!["Multiple tweets, hover effects, and 'Return-To-Top' arrow"](url)
 -
 
 ## Getting Started
