@@ -19,54 +19,49 @@ body {
   color: #545149;
   background-image: url('/images/honey-im-subtle.png');
   background-color: #994f00;
-  font-size: 24px;
+  /* font-size: 24px; */
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- main {
-  padding-left: 5%;
-  padding-right: 5%;
+main {
+  margin: 0 auto;
+  max-width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
- }
- /* screen changes for different media */
- @media only screen and (min-width: 1024px) {
-   body {
-     display: flex;
-     flex-direction: row;
-   }
-   body > header {
-     display: flex;
-     transform: translateX(8vw) translateY(15vh);
-   }
-   .error-container {
-     position: fixed;
-     transform: translateX(73vh) translateY(13vw);
-   }
-   .error {
-     display: flex;
-     max-width: 40%;
-   }
-   .container {
-     display: flex;
-     transform: translateX(10vw) translateY(10vh)
-   }
- }
- /* scroll button styling */
- .fa-circle {
+}
+/* screen changes for different media */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+  body > header {
+    display: flex;
+    transform: translateX(8vw) translateY(15vh);
+  }
+  .container {
+    display: flex;
+    margin-left: 2em;
+    margin-top: 120px;
+    width: 60%;
+    transform: translateX(10vw) translateY(10vh)
+  }
+}
+/* scroll button styling */
+.fa-circle {
   display: flex;
   position: fixed;
   bottom: 10vh;
   right: 2vw;
   font-size: 3em;
   color: red;
- }
- .fa-angle-double-up {
+}
+.fa-angle-double-up {
   transform: translateX(-.81em);
   color: #f4f1ec;
- }
+}

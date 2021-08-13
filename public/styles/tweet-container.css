@@ -5,7 +5,7 @@
   align-content: stretch;
   align-self: stretch;
   padding: 2em;
-  height: 360px;;
+  height: 360px;
 }
 /* the visible shape of the tweet */
 .tweet {
@@ -17,7 +17,6 @@
   border-spacing: 10px;
   margin-top: 2em;
   background-color: tan;
-
 }
 /* the container of the avatar, username and handle */
 .user-info {

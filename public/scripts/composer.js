@@ -72,5 +72,4 @@ $(() => {
       $body.removeClass('scroll-return-button');
     }
   });
-  
 });

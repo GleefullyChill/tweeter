@@ -65,19 +65,17 @@ $(() => {
       $tweetContainer.prepend($tweet);
     }
   };
-
   //create new tweets with a ajax request
   const $newTweet = $('form');
   $newTweet.submit(function(event) {
     event.preventDefault();
-    let $counter = $(this).find('.counter');
-    $counter = $counter.val();
-    
+    let counter = $(this).find('.counter').val();
+
     //an error calling funtion
     const errorEvent = function($errorMessage) {
       //build the error HTML
       const $errorText = $('<h2>Error! </h2>');
-      const $errorBox = $('<header>').addClass("error");
+      const $errorBox = $('<div>').addClass("error");
       const $errorContainer = $('.error-container');
       $errorBox.append($errorText, $errorMessage);
       //attach the error box and slide it into view
@@ -86,13 +84,13 @@ $(() => {
       $errorContainer.addClass("errorNow");
     };
     //determines if an errormessage should be shown and what it should say
-    if ($counter >= 140) {
+    if (counter >= 140) {
       const $errorMessage = $('<h5>Please write something before you press submit!</5>');
       //call the error function
       errorEvent($errorMessage);
       return;
     }
-    if ($counter < 0) {
+    if (counter < 0) {
       const $errorMessage = $('<h5>Please use fewer characters win your tweet!</h2>');
       errorEvent($errorMessage);
       return;

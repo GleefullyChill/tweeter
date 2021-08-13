@@ -4,7 +4,8 @@
 .new-tweet {
   align-self: stretch;
   padding: 2em;
-  margin: 1em
+  margin: 1em;
+  background-color: rgb(214, 235, 241);
 }
 /* display and flex-direction keep layout of text field in order */
 form {
@@ -15,40 +16,39 @@ form {
 }
  /* assigns an initial position and a transformed position, transition is for the return to it's "origin" */
 #tweet-label {
-   font-size: 1em;
-   opacity: 1;
-   transform: translateY(-1.4em);
-   transform-origin: 0 0;
-   transition: all .3s;
+  font-size: 1em;
+  opacity: 1;
+  transform: translateY(-1.4em);
+  transform-origin: 0 0;
+  transition: all .3s;
 }
  /* specifies some layout to the field to accomodate the label transition, transition is for the border color change*/
 #tweet-text {
-   display: flex;
-   height: 1.5em;
-   overflow: none;
-   border-bottom-width: 5px;
-   border-bottom-color: black;
-   border-style: none none solid none;
-   transition:all .5s;
-   background-color: transparent;
+  display: flex;
+  height: 1.5em;
+  overflow: none;
+  border: none;
+  border-bottom: 5px solid black;
+  transition: all .5s;
+  background-color: transparent;
 }
  /* placeholder is invisible */
 #tweet-text::placeholder {
-   color: transparent;
+  color: transparent;
 }
  /* on focus of textarea changes border color */
 #tweet-text:focus {
-   outline: none;
-   border-color: blue;
+  outline: none;
+  border-color: blue;
 }
  /* on focus of the text area or when the placeholder is not in place, ie text in field, moves the label out of the text field */
- #tweet-text:focus + #tweet-label,
-  #tweet-text:not(:placeholder-shown) + #tweet-label {
-   transform: translateY(-2.5em) scale(.8);
+#tweet-text:focus + #tweet-label,
+#tweet-text:not(:placeholder-shown) + #tweet-label {
+  transform: translateY(-2.5em) scale(.8);
 }
  /* turn a negative count red, used in composer-char-counter.js */
- .negNum {
-   color: red;
+.neg-number {
+  color: red;
 }
  /* style the form to allow the button and count to be on the bottom and spread to the opposite sides with bungee font */
 form > div{
@@ -59,14 +59,17 @@ form > div{
 }
  /* change colour of the tweet button */
 .new-tweet button {
-    color: white;
-    background-color: blue;
+  color: white;
+  background-color: blue;
 }
 /* general placement of the error-container */
 .error-container {
   width: 100%;
   display: flex;
-  z-index: 50;
+  z-index: 1000;
+  position: absolute;
+  top: 2em;
+  justify-content: center;
 }
 /* the visible shape and color of the error */
 .error {
@@ -78,13 +81,17 @@ form > div{
   height: 5em;
   justify-content: center;
   z-index: 50;
+  max-width: 40%;
 }
 /* placement of the error message
 margin reduced for better form */
 .error > h2 {
   display: flex;
   margin: 0;
+  text-align: center;
+  justify-content: space-around
 }
 .error > h5 {
-  margin: 0
+  margin: 0;
+  text-align: center
 }

@@ -10,10 +10,10 @@ $(document).ready(function() {
     $counter.val(sum);
     //if the value of the counter is less than 0 turn the text red, return it to base color if it goes back to 0 or more
     if (sum < 0) {
-      $counter.addClass('negNum');
+      $counter.addClass('neg-number');
     }
     if (sum >= 0) {
-      $counter.removeClass('negNum');
+      $counter.removeClass('neg-number');
     }
   });
 });
