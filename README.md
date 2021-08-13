@@ -6,11 +6,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["An error!"](url)
+!["An error!"](https://github.com/GleefullyChill/tweeter/blob/master/docs/show-error-on-desktop.png)
 -
-!["Smaller Screen functionality, toggle hiding Compose Tweet form"](url)
+!["Smaller Screen functionality, toggle hiding Compose Tweet form"](https://github.com/GleefullyChill/tweeter/blob/master/docs/show-hiding-tweet-form-on-small-screen.png)
 -
-!["Multiple tweets, hover effects, and 'Return-To-Top' arrow"](url)
+!["Multiple tweets, hover effects, and 'Return-To-Top' arrow"](https://github.com/GleefullyChill/tweeter/blob/master/docs/show-return-to-top-arrow-and-hover-display.png)
 -
 
 ## Getting Started
